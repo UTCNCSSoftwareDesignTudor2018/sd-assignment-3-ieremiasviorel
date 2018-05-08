@@ -1,4 +1,4 @@
-package com.example.application.NewsAgencyServer.communicaton;
+package com.example.application.NewsAgencyServer.communicaton.util;
 
 import java.util.List;
 

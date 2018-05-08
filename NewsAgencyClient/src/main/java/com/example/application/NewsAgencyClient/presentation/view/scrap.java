@@ -187,74 +187,76 @@ public class scrap {
 
 		JButton login_btn = new JButton("login");
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING).addGroup(groupLayout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-								.addComponent(prev_page_btn, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED).addComponent(lblNewLabel_1)
-								.addPreferredGap(ComponentPlacement.RELATED).addComponent(next_page_btn).addGap(10))
-						.addGroup(groupLayout.createSequentialGroup().addGap(22)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addGroup(groupLayout.createSequentialGroup()
-												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 220,
-																GroupLayout.PREFERRED_SIZE)
-														.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 220,
-																GroupLayout.PREFERRED_SIZE))
-												.addGap(32)
-												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(panel_5, GroupLayout.DEFAULT_SIZE, 224,
-																Short.MAX_VALUE)
-														.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 224,
-																Short.MAX_VALUE))
-												.addGap(41)
-												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 220,
-																GroupLayout.PREFERRED_SIZE)
-														.addComponent(
-																panel_3, GroupLayout.PREFERRED_SIZE, 220,
-																GroupLayout.PREFERRED_SIZE)))
-										.addGroup(groupLayout.createSequentialGroup()
-												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addGroup(groupLayout.createSequentialGroup()
-																.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE,
-																		369, Short.MAX_VALUE)
-																.addPreferredGap(ComponentPlacement.RELATED, 303,
-																		Short.MAX_VALUE))
-														.addGroup(groupLayout.createSequentialGroup()
-																.addComponent(titleLabel, GroupLayout.PREFERRED_SIZE,
-																		523, GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.RELATED)))
-												.addComponent(login_btn, GroupLayout.PREFERRED_SIZE, 65,
-														GroupLayout.PREFERRED_SIZE)))
-								.addGap(25)))));
-		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.LEADING).addGroup(groupLayout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING).addComponent(login_btn)
-						.addComponent(titleLabel, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
-				.addPreferredGap(ComponentPlacement.RELATED).addComponent(lblNewLabel).addGap(28)
-				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING).addGroup(groupLayout
-						.createSequentialGroup()
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 130,
-												GroupLayout.PREFERRED_SIZE)
-										.addGap(18).addComponent(panel_5, GroupLayout.PREFERRED_SIZE, 130,
-												GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(panel_3, GroupLayout.PREFERRED_SIZE, 130,
-												GroupLayout.PREFERRED_SIZE)
-										.addGap(18).addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 130,
-												GroupLayout.PREFERRED_SIZE)))
-						.addPreferredGap(ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE).addComponent(next_page_btn)
-								.addComponent(prev_page_btn).addComponent(lblNewLabel_1)))
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(groupLayout.createSequentialGroup()
-								.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
-								.addGap(18)
-								.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)))
-				.addContainerGap()));
+							.addComponent(prev_page_btn, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblNewLabel_1)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(next_page_btn)
+							.addGap(10))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(22)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
+										.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE))
+									.addGap(32)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(panel_5, GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+										.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE))
+									.addGap(41)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
+										.addComponent(panel_3, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.RELATED, 302, Short.MAX_VALUE))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(titleLabel, GroupLayout.PREFERRED_SIZE, 523, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)))
+									.addComponent(login_btn, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)))
+							.addGap(25))))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(login_btn)
+						.addComponent(titleLabel, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel)
+					.addGap(28)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+									.addGap(18)
+									.addComponent(panel_5, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(panel_3, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+									.addGap(18)
+									.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)))
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(next_page_btn)
+								.addComponent(prev_page_btn)
+								.addComponent(lblNewLabel_1)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap())
+		);
 
 		JLabel title_label_1 = new JLabel("");
 		title_label_1.setFont(new Font("Tahoma", Font.PLAIN, 18));

@@ -1,6 +1,6 @@
 package com.example.application.NewsAgencyClient.communication.message;
 
-public abstract class CommRequest extends CommPackage {
+public class CommRequest extends CommPackage {
 
 	private static final long serialVersionUID = 1L;
 	

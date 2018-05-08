@@ -1,8 +1,8 @@
-package com.example.application.NewsAgencyServer.communication.message;
+package com.example.application.NewsAgencyClient.communication.message;
 
 import java.io.Serializable;
 
-import com.example.application.NewsAgencyServer.data.entity.Article;
+import com.example.application.NewsAgencyClient.data.entity.Article;
 
 public class GetFullArticleResponse extends CommResponse implements Serializable {
 

@@ -2,6 +2,8 @@ package com.example.application.NewsAgencyClient.presentation.view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseListener;
+import java.util.List;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -10,12 +12,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.SwingConstants;
 
-public class StartView extends JFrame {
+import com.example.application.NewsAgencyClient.data.entity.Article;
+import com.example.application.NewsAgencyClient.data.entity.ArticleBasic;
+
+public class MainView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
 	private JPanel startView;
+	private JPanel fullArticleView;
 	
 	private JLabel title_label;
 	private JLabel subtitle_label;
@@ -24,6 +31,8 @@ public class StartView extends JFrame {
 	private GroupLayout gl_panels[];
 	private JLabel title_labels[];
 	private JLabel abstract_labels[];
+	
+	private String[] articleTitles;
 	
 //	private JPanel panel_1;
 //	private JPanel panel_2;
@@ -57,8 +66,14 @@ public class StartView extends JFrame {
 	private JButton next_page_btn;
 	private JButton login_btn;
 	private JLabel page_count_label;
+	
+	private JLabel fullArticleTitleLabel;
+	private JLabel fullArticleAbstractLabel;
+	private JLabel fullArticleBodyLabel;
+	private JLabel fullArticleAuthorLabel;
+	private JButton fullArticleBackButton;
 
-	public StartView() {
+	public MainView() {
 
 		setBounds(100, 100, 800, 480);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -315,12 +330,17 @@ public class StartView extends JFrame {
 														.addComponent(panels[0], GroupLayout.PREFERRED_SIZE, 220,
 																GroupLayout.PREFERRED_SIZE))
 												.addGap(32)
+//												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+//														.addComponent(panels[4], GroupLayout.DEFAULT_SIZE, 224,
+//																Short.MAX_VALUE)
+//														.addComponent(panels[1], GroupLayout.DEFAULT_SIZE, 224,
+//																Short.MAX_VALUE))
 												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(panels[4], GroupLayout.DEFAULT_SIZE, 224,
-																Short.MAX_VALUE)
-														.addComponent(panels[1], GroupLayout.DEFAULT_SIZE, 224,
-																Short.MAX_VALUE))
-												.addGap(41)
+														.addComponent(panels[4], GroupLayout.PREFERRED_SIZE, 220,
+																GroupLayout.PREFERRED_SIZE)
+														.addComponent(panels[1], GroupLayout.PREFERRED_SIZE, 220,
+																GroupLayout.PREFERRED_SIZE))
+												.addGap(32)
 												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 														.addComponent(panels[5], GroupLayout.PREFERRED_SIZE, 220,
 																GroupLayout.PREFERRED_SIZE)
@@ -372,5 +392,93 @@ public class StartView extends JFrame {
 		getContentPane().add(startView);
 		setVisible(true);
 		//getContentPane().setLayout(groupLayout);
+		
+		articleTitles = new String[6];
+		
+		
+		fullArticleView = new JPanel();
+		
+		fullArticleTitleLabel = new JLabel();
+		fullArticleTitleLabel.setBounds(22, 13, 523, 46);
+		fullArticleTitleLabel.setFont(new Font("Tahoma", Font.PLAIN, 36));
+		
+		fullArticleAbstractLabel = new JLabel();
+		fullArticleAbstractLabel.setBounds(22, 66, 748, 71);
+		fullArticleAbstractLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		
+		fullArticleBodyLabel = new JLabel();
+		fullArticleBodyLabel.setBounds(12, 144, 758, 240);
+		fullArticleBodyLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		
+		fullArticleAuthorLabel = new JLabel();
+		fullArticleAuthorLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+		fullArticleAuthorLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		fullArticleAuthorLabel.setBounds(465, 395, 305, 25);
+		
+		fullArticleBackButton = new JButton("back");
+		fullArticleBackButton.setBounds(705, 13, 65, 25);
+		
+		fullArticleView.add(fullArticleTitleLabel);
+		fullArticleView.add(fullArticleAbstractLabel);
+		fullArticleView.add(fullArticleBodyLabel);
+		fullArticleView.add(fullArticleAuthorLabel);
+		fullArticleView.add(fullArticleBackButton);
+		
+		fullArticleView.setVisible(false);
+		getContentPane().add(fullArticleView);
+	}
+	
+	public void updateArticleBasicInfoPanels(List<ArticleBasic> articles) {
+		for (int i = 0; i < 6; i++) {
+			title_labels[i].setText(HTMLize_title(articles.get(i).getTitle()));
+			abstract_labels[i].setText(HTMLize_abstract(articles.get(i).getSummary()));
+			articleTitles[i] = articles.get(i).getTitle();
+		}
+	}
+	
+	public void updateFullArticlePanel(Article article) {
+		fullArticleTitleLabel.setText(article.getTitle());
+		fullArticleAbstractLabel.setText(article.getSummary());
+		fullArticleBodyLabel.setText(article.getBody());
+		fullArticleAuthorLabel.setText(article.getAuthor().getFirstName() + article.getAuthor().getLastName());
+		
+		startView.setVisible(false);
+		fullArticleView.setVisible(true);
+		invalidate();
+		validate();
+	}
+	
+	public String HTMLize_title(String source) {
+		for (int i = 26; i < source.length(); i += 30) {
+			int j = i;
+			while (source.charAt(j) != ' ' && j > 1) {
+				j--;
+			}
+			source = source.substring(0, j) + "<br>" + source.substring(j + 1, source.length());
+			i = j;
+		}
+		source = "<html>" + source + "</html>";
+		return source;
+	}
+	
+	public String HTMLize_abstract(String source) {
+		for (int i = 39; i < source.length(); i += 44) {
+			int j = i;
+			while (source.charAt(j) != ' ' && j > 1) {
+				j--;
+			}
+			source = source.substring(0, j) + "<br>" + source.substring(j + 1, source.length());
+			i = j;
+		}
+		source = "<html>" + source + "</html>";
+		return source;
+	}
+	
+	public String getSelectedArticleTitle(int selectedPanel) {
+		return articleTitles[selectedPanel];
+	}
+	
+	public void addPanelSelectListener(int panelId, MouseListener e) {
+		panels[panelId].addMouseListener(e);
 	}
 }

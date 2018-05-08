@@ -1,4 +1,4 @@
-package com.example.application.NewsAgencyServer.communicaton;
+package com.example.application.NewsAgencyServer.communicaton.util;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
-public class RequestInterpretor {
+public class RequestInterpreter {
 
 	@Autowired
 	protected RequestExecutor requestExecutor;

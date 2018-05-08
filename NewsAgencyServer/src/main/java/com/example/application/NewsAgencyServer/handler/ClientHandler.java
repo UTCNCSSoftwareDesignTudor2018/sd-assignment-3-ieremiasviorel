@@ -10,12 +10,13 @@ import java.util.Observer;
 
 import com.example.application.NewsAgencyServer.communication.message.CommResponse;
 import com.example.application.NewsAgencyServer.communication.message.GetArticlesRequest;
-import com.example.application.NewsAgencyServer.communicaton.RequestExecutor;
-import com.example.application.NewsAgencyServer.communicaton.RequestInterpretor;
+import com.example.application.NewsAgencyServer.communication.message.GetArticlesResponse;
+import com.example.application.NewsAgencyServer.communicaton.util.RequestExecutor;
+import com.example.application.NewsAgencyServer.communicaton.util.RequestInterpreter;
 
 public class ClientHandler extends Thread implements Observer {
 
-	private RequestInterpretor requestInterpretor;
+	private RequestInterpreter requestInterpretor;
 
 	private RequestExecutor requestExecutor;
 
@@ -24,7 +25,7 @@ public class ClientHandler extends Thread implements Observer {
 	private BufferedReader in;
 
 	public ClientHandler(Socket clientSocket) throws IOException {
-		this.requestInterpretor = BeanUtil.getBean(RequestInterpretor.class);
+		this.requestInterpretor = BeanUtil.getBean(RequestInterpreter.class);
 		this.requestExecutor = BeanUtil.getBean(RequestExecutor.class);
 		this.clientSocket = clientSocket;
 		this.out = new PrintWriter(this.clientSocket.getOutputStream(), true);
@@ -40,7 +41,7 @@ public class ClientHandler extends Thread implements Observer {
 	public void run() {
 
 		GetArticlesRequest request = new GetArticlesRequest(Integer.valueOf(1));
-		CommResponse resp = requestExecutor.executeRequest(request);
+		GetArticlesResponse resp = requestExecutor.executeRequest(request);
 		try {
 			out.println(resp.toJson());
 		} catch (IOException e) {

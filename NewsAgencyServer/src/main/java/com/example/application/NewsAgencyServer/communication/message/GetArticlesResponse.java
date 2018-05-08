@@ -32,8 +32,4 @@ public class GetArticlesResponse extends CommResponse implements Serializable {
 	public void setArticles(List<ArticleBasic> articles) {
 		this.articles = articles;
 	}
-	
-	public List<ArticleBasic> getArgument() {
-		return this.articles;
-	}
 }

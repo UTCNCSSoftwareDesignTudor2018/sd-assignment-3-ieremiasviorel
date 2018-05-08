@@ -24,6 +24,6 @@ public class ArticleBasicServiceImpl implements ArticleBasicService {
 	}
 	
 	public List<ArticleBasic> getFirstArticles() {
-		return articleBasicRepository.findAll().subList(0, 5);
+		return articleBasicRepository.findAll().subList(0, 6);
 	}
 }
