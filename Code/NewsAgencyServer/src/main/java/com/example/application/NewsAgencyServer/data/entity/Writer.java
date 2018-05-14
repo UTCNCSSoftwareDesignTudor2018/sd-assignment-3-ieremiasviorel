@@ -33,7 +33,7 @@ public class Writer implements Serializable {
 	private String lastName;
 
 	@Column(name = "user_name")
-	private String userName;
+	private String userName;	
 
 	@Column(name = "password")
 	private String password;
